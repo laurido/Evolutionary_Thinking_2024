@@ -25,3 +25,8 @@ HINTs:
 Follow the guide from [MEGA](https://www.megasoftware.net) to download the corresponding version for your system.
 
 
+There are also simple visual tutorials available for MEGA [download](https://i.imgur.com/dsL42Ey.gif) and for [Windows installation](https://i.imgur.com/RlZ21NT.gif).
+
+
+
+
