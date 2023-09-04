@@ -1,6 +1,6 @@
 # Wednesday Week36
 
-[Slides for today](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/blob/main/week36/Wednesday/Week_2_s1.pdf)
+[Slides for today](https://github.com/cpantea/Evolutionary_Thinking_2023/blob/main/week36/Wednesday/Week36_Wed.pdf)
 
 ## Work plan
 
@@ -14,11 +14,6 @@ D Posada, K A Crandall, [MODELTEST: testing the model of DNA substitution](https
 
 Before reading the paper, read G5. 
 
-Then, you are going to comment it in groups and answer the questions that you can find in the [shared google docs](https://docs.google.com/document/d/1fFOF-OkJ7cEGPsnrtYN_0w4WoL3BDyWpdSNJKtCj7bk/edit?usp=sharing). 
+Then, you are going to comment it in groups and answer the questions that you can find in the [shared google docs](https://docs.google.com/document/d/1PE2yuAdapNSAZIzPYr7VewSzIq8TAQP5zHpx2gPt3rI). 
 
-Each group is going to be in charge of some questions and please write your answers in the google doc file about what you discussed.
-
-
-
-
-
+Odd-numbered groups will first address questions 1-6, while even-numbered groups should initially focus on 7-11.
