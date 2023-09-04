@@ -1,7 +1,7 @@
 # Friday Week35
 
 
-[Slides for today](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/blob/main/week35/Friday/Week_1_s2.pdf)
+[Slides for today](https://github.com/Bjarke-M/Evolutionary_Thinking_2023/blob/main/week35/Friday/wk1_session2_substitution_models.pdf)
 
 ## Work plan
 
@@ -9,23 +9,23 @@ During this TA session you are going to learn how to retrieve sequences (DNA, RN
 
 ### 1. Understanding PubMed and GenBank
 
-GenBank is a useful database that contains DNA, RNA and protein sequences publicly available that we will access through MEGAX to download sequences of interest. You can read more about it [here](https://www.ncbi.nlm.nih.gov/genbank/). 
+GenBank is a useful database that contains DNA, RNA and protein sequences publicly available that we will access through MEGA11 to download sequences of interest. You can read more about it [here](https://www.ncbi.nlm.nih.gov/genbank/). 
 
 In order to use GenBank efficiently, as other databases such as [PubMed](https://pubmed.ncbi.nlm.nih.gov) used to search for papers, it is a good idea to use specific search fields. These can be specified as e.g. [Author], [pdat] (publication time) and [Title] and use logical operators to combine search terms, e.g. AND, OR, NOT. For example, try to search “Zhao[Author] AND Wu F[Author] AND Yu[Author] AND coronavirus[Title] AND 2020[pdat]” on [PubMed](https://pubmed.ncbi.nlm.nih.gov). Which paper comes up?
 
 By searching papers in [PubMed](https://pubmed.ncbi.nlm.nih.gov) and [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) (and Google for sure), answer the following questions:
 
-1. Find and download the paper of the first sequence of the human genome by the International Human Genome Sequencing Consortium or the one assembled by Craig Venter et al in 2001. Where was it published? How can the sequence be obtained?
+1. Find and download the paper of the first sequence of the human genome by the International Human Genome Sequencing Consortium or the one assembled by Craig Venter et al in 2001. Where was it published?
 2. Find the paper on the high coverage archaic Denisovan sequence published by Svante Pääbo's group published in 2012 and answer the same questions. Who were the Denisovans?
 3. How many sequences from the dolphin (you might want to use the latin name *Delphinidae*) can you find? You can choose any other animal!
 4. Find the Taxonomic position of Dolphins and find the number of DNA sequences deposited in GenBank for some of the dolphin species
 5. Find sequences from FOXP2. What can you learn about this protein?
 
-### 2. Retrieving sequences from GenBank and Aligning them with MEGAX
+### 2. Retrieving sequences from GenBank and Aligning them with MEGA11
 
-#### 2.1. Retrieving sequences DIRECTLY from GenBank and Aligning them with MEGAX
+#### 2.1. Retrieving sequences DIRECTLY from GenBank and Aligning them with MEGA11
 
-In this section we are going to access GenBank from MEGAX to retrieve sequences and Align them using different multiple sequence aligners included in MEGAX.
+In this section we are going to access GenBank from MEGA11 to retrieve sequences and Align them using different multiple sequence aligners included in MEGA11.
 
 Follow [2. Align Sequences](https://www.megasoftware.net/web_help_10/index.htm#t=Part_I_Getting_Started%2FA_Walk_Through_MEGA%2FAligning_Sequences.htm) tutorial from [MEGAX-Help](https://www.megasoftware.net/web_help_10/index.htm#t=Introduction.htm)
 
@@ -44,14 +44,14 @@ There are some parts of the tutorial that are wrong. Here you have some fixies:
     But I could not find it. If you can't neither, skip this step
 
 
-3. In the **Obtaining Sequence Data from the Internet (GenBank)** section, when it tells you to look for CFS sequence, I suggest that you look for any sequence you might be interested in. In my case I looked for the Neanderthal, Denisovan and Human mitochondrial DNA. If you follow what I've done, be aware that since they are big sequences, aligning them is going to take some time than smaller protein sequences.  
+3. In the **Obtaining Sequence Data from the Internet (GenBank)** section, when it tells you to look for CFS sequence, I suggest that you look for any sequence you might be interested in. In my case I looked for the Neanderthal, Denisovan and Human mitochondrial DNA (this was taken from a previous TA, because as we all know humans are boring and primates are the best, so maybe compare the EPAS1 Gene from different primates). If you follow what I've done, be aware that since they are big sequences, aligning them is going to take some time than smaller protein sequences.  
     
     
 4. In the **Obtaining Sequence Data from the Internet (GenBank)** section, you will see that the tutorial says
 
     ```If you have checked more than one box: locate the Display Settings dropdown (located near the top left-hand side of the page directly under the tab headings).```
     
-    You just have to click on **Summary** drop down menu (Fig1) and follow the next indications. Be aware that once you press **Fasta (text)** it automatically applies it, so you don't need to press any **Apply button**.
+    You just have to click on **Summary** drop down menu (Fig1) and follow the next indications. Be aware that once you press **Fasta (text)** it automatically applies it, so you don't need to press any **Apply button**. And you need to mark the sequences you want before changing.
     
 
     <img src="genbank_summary.jpg" width="50%">
