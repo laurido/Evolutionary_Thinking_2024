@@ -70,7 +70,7 @@ There are some parts of the tutorial that are wrong. Here you have some fixies:
 
 ```Construct a Maximum Parsimony (MP) Tree Using the Branch-&-Bound Search Option```
 
-   Ignore the steps
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ignore the steps
 
 ```(Windows users) Now print this tree by selecting either of the Print options from the Tree Explorer's File menu.```
 
