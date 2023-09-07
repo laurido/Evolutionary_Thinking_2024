@@ -1,6 +1,6 @@
 # Friday Week36
 
-[slides for today](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/blob/main/week36/Friday/Week36_Fri.pdf)
+[slides for today](https://github.com/cpantea/Evolutionary_Thinking_2023/edit/main/week36/Friday/Week36_Fri.pdf)
 
 ## Work plan
 
