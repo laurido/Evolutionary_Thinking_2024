@@ -1,6 +1,6 @@
 # Friday Week36
 
-[slides for today](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/blob/main/week36/Friday/Week_2_s2.pdf)
+[slides for today](https://github.com/cpantea/Evolutionary_Thinking_2023/edit/main/week36/Friday/Week36_Fri.pdf)
 
 ## Work plan
 
@@ -49,12 +49,34 @@ There are some parts of the tutorial that are wrong. Here you have some fixies:
 1. In the **Building a Neighbor-Joining (NJ) Tree** section, there is a step that says
 
     ```Click Compute to accept the defaults for the rest of the options and begin the computation.```
-    
-    Instead of **Comput**, you will find **OK**
-   
-2. You don't need to do the **Printing the NJ Tree (For Windows users), Printing the NJ Tree (For Mac users) or Constructing a MP Tree using the Heuristic Search**.
 
-3. The last exercise **Examining Data Editing Features** just tells you how to not use some of the sequences to build a tree without removing the sequences form the raw file. I just want to make clear the purpose of the exercise. A part from that, when it says 
+ Instead of **Compute**, you will find **OK**
+  
+2. When prompted to select View|Topology Only in the tutorial, you will find no such option within the 'View' dropdown menu; it is only present as a [GUI button](https://i.imgur.com/qCqU1Go.png):
+
+<img src="https://i.imgur.com/qCqU1Go.png" width="75%">
+
+3. For displaying branch lengths
+  
+    ```You can display the numerical branch lengths in the Topology Only option by selecting View | Options and clicking on the Branch tab. Check the box labeled Display Branch Length and click Ok.```
+
+   you can find the option under the "Show/Hide" tab/submenu, as there is no "Branch" tab/submenu:
+
+<img src="https://i.imgur.com/nfVUJg4.png" width="75%">  
+    
+4. You don't need to do the **Printing the NJ Tree (For Windows users), Printing the NJ Tree (For Mac users) or Constructing a MP Tree using the Heuristic Search**.
+
+5. After skipping past the previous steps to
+
+```Construct a Maximum Parsimony (MP) Tree Using the Branch-&-Bound Search Option```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ignore the steps
+
+```(Windows users) Now print this tree by selecting either of the Print options from the Tree Explorer's File menu.```
+
+```(Mac users) Save the tree to a PDF file as described in Example 4.2b above.```
+
+6. The last exercise **Examining Data Editing Features** just tells you how not to use some of the sequences to build a tree without removing the sequences from the raw file. I just want to make clear the purpose of the exercise. A part from that, when it says 
 
     ```Click the Close button.```
     
