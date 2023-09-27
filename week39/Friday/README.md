@@ -6,7 +6,7 @@
 
 ### 1. Wright-Fisher model simulations and Coalescence simulations
 
-We are going to revise some of the concepts you learned during lectures from a more practical perspective: the Wright Fished model and the basics of Coalescence theory. You should start with the [Wright Fisher exercise](https://github.com/Bjarke-M/Evolutionary_Thinking_2023/blob/main/week39/Friday/WrightFisherTutorial.Rmd) and then, jump to the [coalescence exercise](CoalTutorial.md). These exercises are run in R.
+We are going to revise some of the concepts you learned during lectures from a more practical perspective: the Wright Fished model and the basics of Coalescence theory. You should start with the [Wright Fisher exercise](https://github.com/Bjarke-M/Evolutionary_Thinking_2023/blob/main/week39/Friday/WrightFisherTutorial.Rmd) and then, jump to the [coalescence exercise](https://github.com/Bjarke-M/Evolutionary_Thinking_2023/blob/main/week39/Friday/CoalTutorial.Rmd). These exercises are run in R.
 
 ### 2. Nielsen and Slatkin book exercises - Chapter 1, 2, 3
 
