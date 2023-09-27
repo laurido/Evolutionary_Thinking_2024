@@ -1,6 +1,6 @@
 # Wednesday Week39
 
-[slides for today](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/blob/main/week39/Wednesday/Week_5_s1.pdf)
+[slides for today](https://github.com/Bjarke-M/Evolutionary_Thinking_2023/blob/main/week39/Wednesday/Wednesday_28092023.pptx)
 
 ## Work plan
 
