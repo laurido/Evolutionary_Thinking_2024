@@ -1,5 +1,5 @@
 # Wednesday Week40
-[slides for today](https://github.com/Jilong-Jerome/Evolutionary_Thinking_2022/blob/main/week40/Wednesday/Week_6_s1.pdf)
+[slides for today](https://github.com/cpantea/Evolutionary_Thinking_2023/blob/main/week40/Wednesday/Week40_Wed.pdf)
 ## Work plan
 
 ### Nielsen and Slatkin book exercises - Chapter 4, 5, 6
