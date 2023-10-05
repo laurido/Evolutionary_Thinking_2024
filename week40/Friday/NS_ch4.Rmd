@@ -158,13 +158,6 @@ print(Fst)
 
 ```
 
-
-4.5 Two populations diverged from each other 6000 generations ago, and since then there has been no
-migration between the two populations. The effective size of the population 1 is 10,000 and that of population
-2 is 20,000. The effective size of the ancestral population from which the two populations diverged was 10,000.
-A researcher is studying a locus that mutates at a rate of 10???5 per generation and conforms to an infinite
-sites model.
-
 ```{r}
 #Exercise 4.5
 
