@@ -1,0 +1,65 @@
+---
+title: "NS_ch6"
+adapted from: "Maria Izabel Cavassim Alves"
+curated by: "Calin Pantea"
+date: "10/6/2017 - 05/10/2023"
+output: html_document
+---
+
+## Chapter 6 Linkage Disequilibrium and Gene Mapping
+
+```{r}
+
+# Linkage desiquilibrium formulas
+LD_pair <- function(n_AB, n_Ab, n_aB, n_ab){
+  n = sum(n_AB, n_Ab, n_aB, n_ab)
+  f_A = (n_Ab + n_AB)/n
+  f_B = (n_aB + n_AB)/n
+  f_a = (n_aB + n_ab)/n
+  f_b = (n_Ab + n_ab)/n
+  # D
+  D = n_AB/n - f_A*f_B
+  signal <<- D
+  # r^2
+  r_squared = D**2/(f_A * f_B * f_a * f_b)
+  
+  # D' rescales D to span the range [-1,1]
+  if(signal > 0){
+    D_prime = D/min(f_A * f_b, f_a * f_B)
+  }
+  if(signal < 0){
+    D_prime = D/max(f_A * f_B, f_a * f_b)
+  }
+  nam = c('D', 'r^2', 'D_prime')
+  D_stat = c(D, r_squared, D_prime)
+  
+  return(data.frame(nam, D_stat, stringsAsFactors = FALSE))
+}
+
+# Calculate D, D' and r^2 for sites 82 and 83 in the data shown in the figure above
+LD_pair(n_AB = 22, n_Ab = 9, n_aB = 0, n_ab = 20)
+
+```
+
+One of the most straightforward analysis that one could do with the case control arranged data is to execute
+a Contingency Table test of independence. Both Chi-square and Fisher statistics could be used. But if the
+sample size is small, and the sizes do not follow the Chi-square assumptions, one would use the Fisher's exact
+test, because it gives the exact probability of any arrangement in the table.
+
+```{r}
+
+## From box 6.8 page 123
+M <- as.matrix(rbind(c(1300, 2109), c(700, 891)))
+dimnames(M) <- list(c("A", "G"), c("Cases","Controls"))
+M
+
+# The test statistics can be done using the function chistq.test
+(Xsq <- chisq.test(M, correct = F))
+
+# Check if the results match and if you understand it.
+# Or manually
+Chi2Sum = sum(((Xsq$observed - Xsq$expected)^2)/Xsq$expected)
+Pvalue = 1- pchisq(q=Chi2Sum,df = 2-1)
+Pvalue
+
+```

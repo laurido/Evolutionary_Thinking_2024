@@ -1,0 +1,260 @@
+---
+title: "NS_ch4"
+adapted from: "Maria Izabel Cavassim Alves"
+curated by: "Calin Pantea"
+date: "10/6/2017 - 05/10/2023"
+output: html_document
+---
+
+## Chapter 4: Population subdivision
+
+In the following exercises you will be exposed to some of the analysis of Chapters 4, 5, and 6 from the textbook
+(An introduction to Population Genetics - Nielsen and Slatkin). You will be asked to apply the R functions
+in 2 real datasets and in examples from the book. This document can be updated with comments and be
+compiled to a pdf version using the Knit command. Feel free to do it so! Good luck! :)
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+
+
+```{r}
+#Exercise 4.1
+
+# We create a function that models the Wahlund effect:
+
+wahlund_effect <- function(matrix){
+  # Just dealing with n populations of the same size  
+  h_s_ = vector()
+  fs = vector()
+
+  # Frequency of A in each subpop
+  for(i in 1:dim(matrix)[1]){
+    fs[i] = sum(matrix[i,1] + matrix[i,2]/2)/sum(matrix[i,])
+  }
+  N = length(fs)
+  
+  # Observed proportion of heterozygous individuals when sampling the population
+  for(i in seq_along(fs)){
+    h_s_[i] = 2*fs[i]*(1- fs[i])
+  }
+  
+  f_A = sum(fs)/N
+  h_s <- sum(h_s_)/N
+
+  # Expected heterozygosity based on HWE
+  if(N == 2){
+    h_t = sum(fs)*(1-(sum(fs)/N))
+  }
+  else{
+  h_t = 2*f_A*(1-f_A)
+  }
+  f_st = (h_t - h_s)/h_t
+  combined = c(f_st, h_s, h_t)
+  print('Fst h_S h_T')
+  return(combined)
+}
+
+pop1 = c(20, 20, 20)
+names(pop1) = c('AA', 'Aa', 'aa')
+pop2 = c(15,15, 30)
+names(pop2) = c('AA', 'Aa', 'aa')
+
+pop = rbind(pop1, pop2)
+# Applying the function in our data:
+wahlund_effect(pop)
+
+# Essentially, we employed the Hs (4.3), Ht (4.4), and Fst (4.6) equations from the textbook.
+```
+
+```{r}
+
+#Exercise 4.2
+
+# We add the third pop to our dataset:
+pop3 = c(20, 25, 15)
+names(pop3) = c('AA', 'Aa', 'aa')
+pop_new = rbind(pop, pop3)
+
+# And run the function defined above for all three subpops:
+wahlund_effect(pop_new)
+
+# Manually, we can do it generalising the equations above for any 'd' number of subpops as:
+
+# Hs_d = f_A_d (1 - f_A_d)
+# Ht_d = 2(f_A_d/d)(1-f_A_d/d)
+# Fst_d = (Ht_d-Hs_d)/Ht_d
+
+```
+
+```{r}
+#Exercise 4.3
+
+# Here we have a classic case of coalescence with migration:
+
+# a. With equation (4.7), E[f_C1(t+1)] = f_C1_1 * (1-m) + f_C1_2 * m
+
+m = 0.1
+f_C1_1 = 0.1
+f_C1_2 = 0.9
+
+EfC1 = (f_C1_1*(1-m) + f_C1_2 * m)
+
+print("EfC1 is:")
+print(EfC1)
+
+
+# b. We apply the same equation, using the same migration rate and the newly calculated allele freqs:
+
+EfC1_2 = (EfC1 * (1-m) + (1-EfC1) * m)
+
+print("EfC1_2 is:")
+print(EfC1_2)
+
+# We can also easily transcribe this into a for loop in order to follow allele freq along generations, if all other parametres remain the same.
+
+```
+
+```{r}
+#Exercise 4.4
+
+# We define an expected coalescence time function for both within-subpop and between-subpops:
+
+E_coalescence_time <- function(N_e, m, d, within = T){
+  #Assumes:
+  # d populations of size 2N
+  # symetric migration rate m = [M/2N]
+  M = N_e*m
+  E_s = d
+  if(within == T) return(E_s)
+  
+  else{
+  E_d = (1/2*M) + d
+  }
+  return(E_d)
+}
+
+# a. And run it for E_s:
+
+print("E_s time is:")
+(E_coalescence_time(N_e = 10000, m = 0.0001, d =2, within = T)) * 10000
+
+# b. And for E_d
+
+print("E_d time is:")
+(E_coalescence_time(N_e = 10000, m = 0.0001, d =2, within = F)) * 10000
+
+# c. Under the infinite sites model, Fst can be defined as depending on M, as in (4.18):
+
+N_e = 10000
+m = 0.0001
+M = N_e*m
+
+Fst = 1/(1+8*M)
+
+print("Fst is:")
+print(Fst)
+
+```
+
+
+4.5 Two populations diverged from each other 6000 generations ago, and since then there has been no
+migration between the two populations. The effective size of the population 1 is 10,000 and that of population
+2 is 20,000. The effective size of the ancestral population from which the two populations diverged was 10,000.
+A researcher is studying a locus that mutates at a rate of 10???5 per generation and conforms to an infinite
+sites model.
+
+```{r}
+#Exercise 4.5
+
+# We can define a generalised function for the expected number of nucleotide differences (ch3,p40):
+
+theta <- function(Ne1,Ne2, mu, r){
+
+  # for theta_1, we use the formula theta = 4*N*mu -> but Ne1/Ne2 are notations already representing 2N, hence:  
+  theta_1 = 2*Ne1*mu
+  
+  if(Ne2 == 0){
+    theta_1 = 2*Ne1*mu
+    return(theta_1)
+  }
+  
+  # exp no of nucl diff between two populations is the sum of exp number of mutations in the ancestral pop and in the two descendant pops (the latter being defined as r*mu):
+  
+  else{
+    theta_a = theta_1 + 2*r*mu
+    return(theta_a)
+  }
+}
+# Answer a
+print("theta_within is")
+theta(10000, 0, mu = 10^-5, r = 6000)
+
+# Answer b
+print("theta_between is")
+theta(10000, Ne2 = 20000, mu = 10^-5, r = 6000)
+
+#please note that the textbook calculation is wrong, i.e. the correct answer should be 0.32
+```
+
+```{r}
+#Exercise 4.6
+
+# Since we assume migration equilibrium, we apply (4.18):
+#Fst = 1 /(1 + 8*M)
+#1 = Fst*(1+8*M)
+#1 = Fst + 8*Fst*M
+#M = (1-Fst)/8*Fst
+#M = 1/8*(1/Fst - 1)
+
+Fst = wahlund_effect(pop)
+print("Fst is")
+print(Fst[1])
+M = 1/8*(1/round(Fst[1],digits = 3)-1)
+
+# but M = 2N*m so m = M/2N:
+
+Ne = 10000
+m = M/Ne
+print("the migration rate is")
+print(m)
+
+# note that the textbook answer is incorrect: should be 7.7*10^-4
+```
+
+```{r}
+#Exercise 4.7
+
+# we use Fst from 4.1:
+Fst = round(Fst[1], digits = 3)
+
+# equal 2N and no gene flow => we apply (4.21):
+#Fst = T/(T+2)
+# from this, we obtain T = 2*Fst/(1-Fst)
+T_var = (2*Fst[1])/(1- Fst[1])
+
+# after which we convert into number of generations:
+print("Generations since divergence:")
+print(T_var*Ne)
+
+#note that, once again, the book is wrong - they most likely used T=Fst/(1-Fst) instead
+```
+
+```{r}
+#Exercise 4.8
+#
+
+
+
+
+```
+
+```{r}
+#Exercise 4.9
+# 
+
+
+
+
+```
