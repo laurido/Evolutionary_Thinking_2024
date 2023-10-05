@@ -8,10 +8,52 @@ output: html_document
 
 ## Chapter 5: Inferring Population History and Demography
 
+In the following exercises you will be exposed to some of the analysis of Chapters 4, 5, and 6 from the textbook
+(An introduction to Population Genetics - Nielsen and Slatkin). You will be asked to apply the R functions
+in 2 real datasets and in examples from the book. This document can be updated with comments and be
+compiled to a pdf version using the Knit command. Feel free to do it so! Good luck! :)
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
 ```{r}
 #Exercise 5.1
-Time = 2*FST[1]/(1- FST[1])
 
+# we again define the Fst function:
+
+wahlund_effect <- function(matrix){
+  h_s_ = vector()
+  fs = vector()
+
+  for(i in 1:dim(matrix)[1]){
+    fs[i] = sum(matrix[i,1] + matrix[i,2]/2)/sum(matrix[i,])
+  }
+  N = length(fs)
+  
+  for(i in seq_along(fs)){
+    h_s_[i] = 2*fs[i]*(1- fs[i])
+  }
+  
+  f_A = sum(fs)/N
+  h_s <- sum(h_s_)/N
+
+  if(N == 2){
+    h_t = sum(fs)*(1-(sum(fs)/N))
+  }
+  else{
+  h_t = 2*f_A*(1-f_A)
+  }
+  FST = (h_t - h_s)/h_t
+  combined = c(FST, h_s, h_t)
+  print('Fst h_S h_T')
+  return(combined)
+}
+
+# then, just as in exercise 4.7, we apply (4.21) to obtain:
+#Time = 2*FST[1]/(1- FST[1])
+
+# we calculate Fst and then coalescent time:
 pop1 = c(12, 22, 6)
 names(pop1) = c('AA', 'Aa', 'aa')
 pop2 = c(32, 6, 2)
@@ -20,26 +62,55 @@ pop_new2 = rbind(pop1, pop2)
 
 FST = wahlund_effect(pop_new2)
 
-
-# In coalescent time units
 Time = 2*FST[1]/(1- FST[1])
 two_N = 10000
 r_year = 5
-# In years time
+
+# and convert to years time:
+print("")
+print("Divergence years:")
 Time*two_N*r_year
+```
+
+```{r}
+#Exercise 5.2
+
+# see textbook for figure
+# position 1: A->C
+# position 2: C->G
+# position 3: A->T/T->A
+# position 4: G->C
+# position 5: C->T
+# position 6: n/a
+# position 7: A->G/G->A
+
+```
+
+```{r}
+#Exercise 5.3
+
+#a. Tree A - the two lineages diverge deep in time to give rise to the two populations
+
+#b. B - multiregional (extensive admixture, no clear phylogenetic division between pop1 and pop2)
+#   E - OoA (monophyletic population diverging from ancestral lineage, but showing some degree of deep relatedness to specific lineages within the latter)
+
+#c. A, D, E (no admixture) and F (ancient admixture)
+
 ```
 
 ```{r}
 # Exercise 5.4
 
+# Theta likelihood function:
+
 theta = seq(from = 0, to = 20)
 Pr = ((1/(1 + theta))*(theta/(1 + theta))^4)
 names(Pr) = theta
 
-#These are all the probabilities for the given thetas
+# These are all the probabilities for the given thetas. We plot it:
 plot(theta, Pr, type = 'l', ylab = 'Likelihood of theta')
 
-# Theta estimate of watterson
+# Watterson's estimator:
 n = 2
 d = 4
 theta_w = 2*d/n*(n- 1) # number of differences divided by the number of combinations
@@ -66,12 +137,4 @@ faa_2 = pop_new2[2,3]
 p1 = 0.1
 p2 = 0.9
 (pos2 = faa_1*p1/(faa_1*p1 + faa_2*p2))
-```
-
-```{r}
-
-```
-
-
-```{r}
 ```
