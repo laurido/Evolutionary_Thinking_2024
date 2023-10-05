@@ -243,18 +243,33 @@ print(T_var*Ne)
 
 ```{r}
 #Exercise 4.8
-#
+# Two populations, island model:
 
+#Hs = d*theta/k
 
+# probability of two samples belonging to same deme = 1/d; therefore:
 
+#Ht = ((1/d)*(d*theta/k)+(d-1/d)*(theta(1/2M+d)/k)) = (theta/k)*(d+((d-1)/2dM))
+
+# but Fst = (Ht-Hs)/Ht, so from above:
+
+#Fst = ((d-1)/2dM)/(d+((d-1)/2dm)) = ((d-1)/d)/(2Md+(d-1)/d)
 
 ```
 
 ```{r}
 #Exercise 4.9
-# 
+# two gene copies each migrating into each d-1 demes at rate M
+# probability of two samples belonging to same deme = 1/(d-1)
+# waiting time for first migration event will be 1/(2M(d-1)), so
 
+#E_Dt = (1/2M(d-1))+((1/d-1)*E_St)+((d-2/d-1)*E_Dt) = 1/2M + E_St
 
+#E_St = (1/1+2M(d-1))+(2M(d-1)/1+2M(d-1))*E_Dt
 
+# so we obtain:
+
+#E_St = d
+#E_Dt = (d+1)/2M
 
 ```
