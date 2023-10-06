@@ -1,12 +1,12 @@
 # Hand-in 2 - Selection using dN/dS
 
-In this hand in you will analyse some data and test for selection (Part 1) and you will also do the theoretical exercises of the Nielsen and Slatkin's Book, Chapter 9 (Part 2). For Part 1 you can choose one out of two options: 
+In this hand-in you will analyse some data and test for selection (Part 1) and you will also solve the theoretical exercises of the Nielsen and Slatkin's Book, Chapter 9 (Part 2). For Part 1 you can choose one out of two options: 
 
-Option A. you will analyse the [NORK](https://www.uniprot.org/uniprot/Q8LKZ1) data set for selection using the phylogenetic concepts and tools you have learned during the last TA session on Friday. Then you will have to answer some questions (below). Make sure to include detailed information on how the analysis were performed (for example, which substitution model was used, number of bootstraps...).
+Option A. You will analyse the [NORK](https://www.uniprot.org/uniprot/Q8LKZ1) data set for selection using the phylogenetic concepts and tools you have learned during the last TA session on Friday. Then you will have to answer some questions (below). Make sure to include detailed information on how the analysis were performed (for example, which substitution model was used, number of bootstraps, and so on).
 
-Option B. you can formulate an hypothesis about selection (look below for examples), test your hypothesis and coment your results. 
+Option B. You can formulate a hypothesis about selection (look below for examples), test your hypothesis and coment your results. 
 
-You must write a report with Part 1 (either A or B) and Part 2. For Part 2 you must comment the result or show the calculations to get the results. If the final result is the only thing provided, Part 2 is going to be failed. This report must be uploaded on Brightspace in **PDF** format before **Sunday 30th of October at 11:59 pm**. (Each group handin a report).
+You must write a report spanning both Part 1 (either A or B) and Part 2. For Part 2 you must comment the result or show your work (the calculations to get the results). If the final result is the only thing provided, you will have failed Part 2. This report must be uploaded on Brightspace in **PDF** format before **Sunday the 29th October at 11:59 pm**. (A single report needs to be handed in per group).
 
 ## Part 1
 
@@ -20,16 +20,17 @@ Legumes have the ability to form symbiotic associations with soil bacteria (a po
 
 The alignment of a fragment of the NORK coding sequence (CDS) gene of 32 species of the Medicago genus and 6 other species within the Legumes family is provided in MEGA format ([nork.meg.zip](nork.meg.zip)).
 
-Additionally, a phylogeny (Fig 1) of the genus Medicago (available as a newick tree file [bena.nwk.zip](bena.nwk.zip) that can be viewed in MEGA). This phylogeny is described fully in 
-Béna G et al, (Molecular phylogeny supports the morphologically based taxonomic transfer of the medicagoid Trigonella species into the genus Medicago L., Plant Syst Evol 2001, 229:217-236.
+Additionally, a phylogeny (Fig 1) of the genus Medicago (available as a newick tree file [bena.nwk.zip](bena.nwk.zip) that can be viewed in MEGA) is provided. This phylogeny is described fully in:
+Béna G et al, (Molecular phylogeny supports the morphologically based taxonomic transfer of the medicagoid Trigonella species into the genus Medicago L., Plant Syst Evol 2001, 229:217-236
 
 <img src="Fig1.png" width="75%">
 
->**Fig 1.** independent phylogeny of Medicago genus (based on ITS sequences) and evolutionary transition in symbiotic specificity along the phylogeny. Topology is contained in the newick tree file [bena.nwk.zip](bena.nwk.zip). Ancestral reconstruction was used to infer the symbiotic specificities of each node. Branches where a shift in symbiotic specificity occurred are marked (numbered 1 to 5). See for details Béna G, et al : Medicago – Sinorhizobium symbiotic specificity evolution and the geographic expansion of Medicago. J Evol Biol 2005, 18:1547-1558.
+>**Fig 1.** independent phylogeny of Medicago genus (based on ITS sequences) and evolutionary transition in symbiotic specificity along the phylogeny. Topology is contained in the newick tree file [bena.nwk.zip](bena.nwk.zip). Ancestral reconstruction was used to infer the symbiotic specificities of each node. Branches where a shift in symbiotic specificity occurred are marked (numbered 1 to 5). See for details:
+>Béna G, et al : Medicago – Sinorhizobium symbiotic specificity evolution and the geographic expansion of Medicago. J Evol Biol 2005, 18:1547-1558
 
 ### 1. Building a phylogeny of the Medicago genus using NORK
 
-1.1. Which substitution model fits the data the best among JC, K2 and Tamura Nei? Why is that? Do you need to account for other parameters (R, I, Gamma…)?
+1.1. Which substitution model fits the data the best among JC, K2 and Tamura Nei? Why is that? Do you need to account for other parameters (R, I, Gamma,…)?
 
 1.2. Build a phylogenetic tree using the NJ algorithm and comment on it by answer the following questions:
 
@@ -62,18 +63,18 @@ Start by formulating an hypotesis that you can test about selection. Some exampl
 - LCT (lactase) gene is an example of positive selection in Humans since certain mutations allow adult humans to digest lactose compared to other mammals. Can I identify which region of the protein is under positive selection?
 - Is there more selection in introns than in exons?
 
-You can be creative and make your own hypotesis (please, be creative... when I correct is more fun!). An aspect you need to consider is the data that you are going to use and if it is accessible to you. 
+You can be creative and make your own hypotesis. An aspect you need to consider is the data that you are going to use and if it is accessible to you. 
 
 Then, you have to decide which statistic is more adequate for your hypotesis. You can use the statistics introduced to you in Chapter 9 in Nielsen and Sltakin's book:
 
 1. dN/dS test
 2. HKA test 
-3. MacDonal-Kreitman test
+3. McDonald-Kreitman test
 4. Tajima's D test
 
-You should explain why you choose that statistic, what is it measuring and what do you expect to be the result. 
+You should explain why you choose that statistic, what it is measuring, and what you expect the result to be. 
 
-Then, you must perform your analysis, present the results and what are your conclussions. Best case scenario will be that your alternative hypotesis might be correct and you find some signals of selection, but if you get that the boring null hypotesis is the most likely one... well... you will learn that science is not easy (Fig 2). 
+Then you must perform your analysis and present the results and your conclusions. Best case scenario will be that your alternative hypotesis might be correct and you find some signals of selection, but if you get that the boring null hypotesis is the most likely one... well... you will learn that science is not easy (Fig 2). 
 
 
 <img src="Fig2.png" width="25%">
