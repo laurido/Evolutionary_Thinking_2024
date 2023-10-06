@@ -2,7 +2,7 @@
 [slides for today](https://github.com/cpantea/Evolutionary_Thinking_2023/blob/main/week37/Wednesday/Week37_Wed.pdf)
 ## Work plan
 
-We are going to discuss the insect phylogenetics paper and answer some questions about it in a shared google docs document.
+We are going to discuss the Zoonomia paper and answer some questions about it in a shared google docs document.
 
 ### The Zoonomia paper
 
