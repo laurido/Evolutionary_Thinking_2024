@@ -165,6 +165,8 @@ f_b <- 0.6
 
 ssize <- sum(AB, Ab, aB, ab)
 
+chi2 <- 0
+
 for (i in c("a", "A")){
   for (j in c("b","B")){
     i_value <- get(paste("f_", i, sep=""))
