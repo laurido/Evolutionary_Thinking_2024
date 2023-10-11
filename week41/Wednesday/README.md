@@ -1,6 +1,6 @@
 # Tuesday Week41
 
-[slides for today](https://github.com/cpantea/Evolutionary_Thinking_2023/blob/main/week41/Wednesday/Week41_Wed.pdf.pdf)
+[slides for today](https://github.com/cpantea/Evolutionary_Thinking_2023/blob/main/week41/Wednesday/Week41_Wed.pdf)
 
 ## Work plan
 
