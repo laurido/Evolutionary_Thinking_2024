@@ -57,25 +57,24 @@ timefct(s_coef, fA_0, fA_1)
 ```{r}
 #Exercise 7.2
 
-________________________________________________________still messed up for now
-
 # for N=10^4, the initial allele frequency was:
 N <- 10^4
 f_A0 <- 1/(2*N)
 
-f_At <- 0.9*2*N
+f_At <- 0.9
+freq_A <- 1/(2*N)
+s_coef <- 0.01
 
-# ***** there is no info on selection, so we can probably assume that s=0 (which is what confused us all on Wednesday)
 # from Box 7.1:
-time_gen <- log(abs((f_A0/f_At - f_A0)/(1-f_A0)))
+time_gen <- log(abs((f_A0/f_At - f_A0)/(1-f_A0)))/log(1-s_coef)
 print(time_gen)
 
 # same for N=10^5:
 
 N <- 10^5
 f_A0 <- 1/(2*N)
-f_At <- 0.9*2*N
-time_gen <- log(abs((f_A0/f_At - f_A0)/(1-f_A0)))
+f_At <- 0.9
+time_gen <- log(abs((f_A0/f_At - f_A0)/(1-f_A0)))/log(1-s_coef)
 print(time_gen)
 ```
 
@@ -244,23 +243,21 @@ print(fpr_SS)
 ```{r}
 #Exercise 7.8
 
-_____________________________________________________________________________________ same as for 7.2
-
 N <- 10^4
 
 # no drift; genic selection for newly introduced allele; we have:
 
 f_B0 <- 1/(2*N)
-f_B1 <- 0.99*2*N
+f_B1 <- 0.99
 
 # apparently we assume a selection coefficient between 0.1 and 0.2, corresponding to v_AB of 0.8-0.9 (where A is the initial dark allele and B is the introduced light allele)
 
 s_coef <- 0.1
-t_gen <- log((f_B0/f_B1 - f_B0)/(1-f_B0))/log(1-s)
+t_gen <- log((f_B0/f_B1 - f_B0)/(1-f_B0))/log(1-s_coef)
 print(t_gen)
 
 s_coef <- 0.2
-t_gen <- log((f_B0/f_B1 - f_B0)/(1-f_B0))/log(1-s)
+t_gen <- log((f_B0/f_B1 - f_B0)/(1-f_B0))/log(1-s_coef)
 print(t_gen)
 
 ```
