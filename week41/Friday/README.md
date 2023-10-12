@@ -1,6 +1,8 @@
 
 # Friday - Week 41
 
+[slides for today](https://github.com/cpantea/Evolutionary_Thinking_2023/blob/main/week41/Friday/Week41_Fri.pdf)
+
 ## Work plan
 
 ### Selection tests - R exercises
