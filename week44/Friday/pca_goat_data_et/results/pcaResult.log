@@ -1,0 +1,27 @@
+PLINK v1.90b7.1 64-bit (18 Oct 2023)
+Options in effect:
+  --autosome
+  --bfile ADAPTmap_genotypeTOP_20160222_full
+  --chr-set 29
+  --out pcaResult
+  --pca
+
+Hostname: d54908
+Working directory: /Users/au645298/Desktop/pca_goat_data_et
+Start time: Tue Oct 31 10:00:35 2023
+
+Random number seed: 1698742835
+16384 MB RAM detected; reserving 8192 MB for main workspace.
+49953 out of 53347 variants loaded from .bim file.
+4653 samples (32 males, 158 females, 4463 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to pcaResult.nosex .
+Using up to 11 threads (change this with --threads).
+Before main variant filters, 4653 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.975692.
+49953 variants and 4653 samples pass filters and QC.
+Note: No phenotypes present.
+Relationship matrix calculation complete.
+--pca: Results saved to pcaResult.eigenval and pcaResult.eigenvec .
+
+End time: Tue Oct 31 10:00:52 2023
