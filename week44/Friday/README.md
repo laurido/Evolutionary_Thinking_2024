@@ -2,6 +2,8 @@
 
 ## Population structure of Goats and an introduction to the PCA
 
+We will recreate this research paper to some extend [goat research paper](https://gsejournal.biomedcentral.com/counter/pdf/10.1186/s12711-018-0422-x.pdf) you don't have to read it
+
 Introduction to a PCA by some generative AI (you know of whom I speak)
 
 Principal Component Analysis (PCA) is a versatile statistical technique that finds its utility in a wide array of fields, including genetics, by effectively simplifying complex high-dimensional data while preserving its essential variance. PCA operates by transforming the original data into a new coordinate system, comprised of orthogonal axes known as principal components, which are the linchpin for unraveling significant patterns within the data.
