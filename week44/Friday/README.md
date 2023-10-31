@@ -1,108 +1,20 @@
 # Friday Week44
 
-## Work plan
+## Population structure of Goats and an introduction to the PCA
 
-1. Gene Duplication tutorial in MEGAX
-2. Globins Gene Duplication exercise in MEGAX
+Introduction to a PCA by some generative AI (you know of whom I speak)
 
-### 1. Gene Duplication tutorial in MEGAX
+Principal Component Analysis (PCA) is a versatile statistical technique that finds its utility in a wide array of fields, including genetics, by effectively simplifying complex high-dimensional data while preserving its essential variance. PCA operates by transforming the original data into a new coordinate system, comprised of orthogonal axes known as principal components, which are the linchpin for unraveling significant patterns within the data.
 
-This example shows how to identify gene duplications and speciation in MEGAX. For this analysis, MEGA uses a Gene Duplication Wizard window which will walk you through the necessary steps. The data files used in this example can be found  in the MEGA/Examples folder (The default location for Windows users is in `~\Documents\MEGAX\Examples\`
+The PCA process commences with standardizing the data to ensure no single variable dominates the analysis. Subsequently, it hinges on the computation of the covariance matrix, which uncovers the interrelationships between variables, reflecting how they co-vary and their linear associations. Eigenvalue decomposition follows, extracting eigenvalues and eigenvectors from the covariance matrix. Eigenvalues unveil the amount of variance that each principal component explains, while eigenvectors define the principal components' directions.
 
-From the main MEGAX window, select `USER TREE` and click on `Find Gene Duplications`. The Gene Duplication Wizard window, which outlines the 6 steps, will be displayed.
+Researchers typically choose a subset of the principal components, ranked by their corresponding eigenvalues, capturing a substantial portion of the variance in the data. This selection can be predicated on predetermined criteria, such as a desired percentage of explained variance. The chosen principal components are then employed to project the original data onto this reduced dimensionality space, resulting in a more compact dataset.
 
-#### Step1:
+In the realm of population genetics, PCA serves as a powerful tool for diverse applications. It aids in unveiling the genetic structure of populations, effectively visualizing clusters and patterns indicative of different geographic regions or subpopulations. Moreover, PCA plays a pivotal role in quality control, identifying outliers and mixed-ancestry individuals to maintain the integrity of genetic datasets. Additionally, it is instrumental in correcting for population stratification in genome-wide association studies, ensuring more accurate results. Genetic clustering, evolutionary studies, and the elucidation of genetic relatedness among species or subspecies are also well-served by PCA.
 
-First, we will load a gene tree file. 
+In essence, PCA simplifies the complexity of high-dimensional genetic data and empowers researchers to visualize and interpret genetic diversity, evolutionary relationships, and population structures, making it an indispensable tool in the field of population genetics.
 
-1. Click `Browse...` in the `LOAD GENE TREE FILE` section
-2. Find and select the “gene_tree.nwk” tree file in the `MEGA X\Examples` directory
-
-#### Step 2:
-
-Second, we will provide species names for each taxon in the gene tree. 
-
-1. Click the `Map species` button in the `MAP SPECIES NAMES TO TAXA` 
-
-Species names could be mapped manually using the grid displayed in this dialog, but we will load the names from a text file that specifies the mapping as taxon_name=species_name for each taxon in the gene tree. 
-
-2. Click `File` in the upper bar, then `Import` and then find the “taxa_to_species_map.txt” file
-
-Once MEGAX loads the file, the grid will be populated with species names for each taxon. 
-
-3. Click the `OK` button.
-
-#### Step 3:
-
-Next, we can optionally load a trusted species tree file. 
-
-1. Click `Browse...` in the `LOAD SPECIES TREE (OPTIONAL)` section
-2. Find and select the “species_tree.nwk” file in the MEGA\Examples directory 
-
-After the species tree file is parsed by MEGAX, the Gene Duplication Wizard will jump to Step 5. This is because the tree in the “gene_tree.nwk” file is already rooted so we don’t need to specify the root to MEGAX.
-
-#### Step 4: 
-
-We skip this step for brevity (but don’t worry, it is done exactly as in Step 5). Note – if our gene tree was not rooted, we could optionally skip this step. In that case, MEGA would execute the analysis with all possible placements of the root and keep the result(s) that minimize the number of gene duplications found.
-
-#### Step 5:
-
-Next, must specify the placement of the root for the species tree as this is required for the analysis. 
-
-1. Click the `Set Root` in the `ROOT THE SPECIES TREE` section 
-
-The species tree will be displayed in Tree Explorer window and the cursor will be adorned with the root placement tool icon. 
-
-2. Click on the branch to “puffer fish” in the tree and then click the `OK` button on the toolbar at the top of the window
-
-#### Step 6: 
-
-Finally, in the Gene Duplications Wizard window, click the `Launch Analysis` button. Progress will be displayed as the analysis runs. When the analysis completes, the Tree Explorer window will return and display the gene tree.
- 
-#### Viewing the results
-
-In the Tree Explorer window, the gene tree will be displayed with gene duplications and speciation events shown. Blue diamonds indicate those nodes which represent gene duplication events. Red diamonds indicate speciation events. 
-
-To display species names instead of taxa names:
-
-1. Click `View` 
-2. Click `Show/ Hide`
-3. Click `Species Names` 
-
-You can toggle the display of markers for gene duplications and speciation events by:
-
-1. Click `View`
-2. Click `Show/Hide`
-3. Click `Gene Duplication Markers` or `Speciation Markers`
-
-You can also traverse gene duplications or speciations throughout the tree by:
-
-1. Click `Search`
-2. Click `Gene Duplication/Speciation Events`
-
-### 2. Globins Gene Duplication exercise in MEGAX
-
-As you read in page 297 of Dan Graur's book ([here](scan.zip) you have the scaned copies), the human globins have a deeply studied gene duplication history (Fig 1). In this exercise, you are only provided with some globin genes from humans, chimps, rats and fruit fies ([globins.fa.zip](globins.fa.zip)). 
-
-<img src="Fig1.png" width="50%">
-
->**Fig 1.** Dan Graur's Book Figure 7.16
-
-By using all the knowledge you aquired during this course, you will have to:
-
-1. Align the sequences
-2. Test which substitution model and other parameters explain the best your data
-3. Construct a phylogenetic tree
-4. Interpret the phylogenetic tree with what it is explained in Dan Graur's (chapter 7)
-
-NOTE: When you construct the phylogenetic tree, remember you can root the tree for better visualization. 
-
-Then, asnwer those questions:
-
-##### 1. For each internal node discuss if it represents a gene duplication or a speciation event.
-##### 2. Do HBA genes in primates and in rats have a common ancestor? Think about an scenario that could lead to this tree
-##### 3. Comment the phylogenetic relationship between the HBA in primates.
-##### 4. Check your hypothesis of gene duplication and species split in humans from the first question and by comparing with Figure 7.16 in Dan Graur's book and the split times between species (check this [link](http://www.timetree.org)).
+## This exercise requires a program called plink, which can be downloaded either in conda or as a standalone program, if you have time download it beforehand 
 
 
 
