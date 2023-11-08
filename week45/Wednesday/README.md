@@ -2,7 +2,7 @@
 
 ## Work plan
 
-[slides for today]()
+[slides for today](https://github.com/cpantea/Evolutionary_Thinking_2023/blob/main/week45/Wednesday/Week45_Wed.pdf)
 
 We are going to discuss a paper about telling human missense variants apart by deleteriousness and how primate variants are important to achieving this:
 
