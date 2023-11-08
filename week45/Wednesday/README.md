@@ -2,6 +2,8 @@
 
 ## Work plan
 
+[slides for today]()
+
 We are going to discuss a paper about telling human missense variants apart by deleteriousness and how primate variants are important to achieving this:
 
 Hong Gao and colleagues. [The landscape of tolerated genetic variation in humans and primates](https://www.science.org/doi/10.1126/science.abn8197). Science, 2023
