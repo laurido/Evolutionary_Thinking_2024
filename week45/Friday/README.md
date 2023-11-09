@@ -44,9 +44,4 @@ My advice is to use data subsetting in combination with for loops to calculate t
 #### 9. For each gene, re-caclulate SNP frequency by normalizing the number of SNPs with the product of gene length and mean copy number (i.e. the sum total sequence length of all copies of a gene). Which gene has the highest SNP frequency now?
 #### 10. Why do the results differ between question 2 and 9? (Hint: Look at the "SNP calling in palindromes" section of the paper.)
 
-### Optional exercize A
-Divide the the Y chromosome into 100kb non-overlapping windows and calculate mutation frequences for each window. Plot mutation frequencies along window positions. What patterns can you see?
-
-### Optional exercize B
-Are there differences in mutation frequencies or copy numbers between genes that differ in tissue expression (testis vs. non-testis expression) or regional position (X-degenerate vs. ampliconic)? Are there differences between different Y haplogroups?
 
