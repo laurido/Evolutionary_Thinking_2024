@@ -1,4 +1,4 @@
-# Wednesday Week46
+# Wednesday Week46 - Archaic Introgression
 
 ## Work plan
 
