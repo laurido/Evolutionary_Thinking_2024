@@ -2,12 +2,12 @@
 
 ## Work plan
 
-We are going to discuss two short papers published 10 years apart by the same authors, that have to do with resolving incongruences of phylogenetic trees, so please read them by Wednesday:
+[slides](https://github.com/cpantea/Evolutionary_Thinking_2023/blob/main/week46/Wednesday/Week46_Wed.pdf) for today
 
-Rokas et al. [Genome-scale approaches to resolving incongruence in molecular phylogenies](https://www.nature.com/articles/nature02053). Nature, 2003.
+We are going to discuss a paper describing the assembly of the first Neandertal draft genome and some basic phylogenetic analyses featuring it:
 
-Salichos & Rokas. [Inferring ancient divergences requires genes with strong phylogenetic signals](https://www.nature.com/articles/nature12130). Nature, 2013.
+Green et al. [A Draft Sequence of the Neandertal Genome](https://doi.org/10.1126/science.1188021). Science, 2010.
 
+Please go through the paper, then find the questions [here](https://docs.google.com/document/d/1j2yJCtJr9NPWdR27IUuadV01g59S9eYN_eJN6oOfW6A).
 
-Link to questions:
-https://docs.google.com/document/d/1bAPNTa49bgm_c-iDGTJwvWQuLIddr-D5bCJ50TzI3uM/edit
+Some guideline answers to the questions will show up [here](https://github.com/cpantea/Evolutionary_Thinking_2023/blob/main/week46/Wednesday/Green_paper_answers.txt) after the TA session :)
