@@ -1,6 +1,5 @@
-We are going to discuss a paper about population genomics of ancient Eurasians - please read the paper by Wednesday:
+We are going to discuss a paper discussing mutation rate variability and evolution in the vertebrate germline - please read it by Wednesday:
 
-Mathieson et al. [Genome-wide patterns of selection in 230 ancient Eurasians](https://www.nature.com/articles/nature16152). Nature, 2015.
+Bergeron et al. [Evolution of the germline mutation rate across vertebrates](https://doi.org/10.1038/s41586-023-05752-y). Nature, 2023.
 
-Link to the questions:
-https://docs.google.com/document/d/1A7dto309x0YPWCRUwHtHA7Qbv6rX50tOQOKngP-634A/edit?usp=sharing
+You can find the questions for the paper discussion [here](https://docs.google.com/document/d/1MkYnQGgFcvBw0u7UtDQlmOop_ypbN4X95F8gKfzjhtc).
