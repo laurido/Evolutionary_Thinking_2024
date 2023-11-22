@@ -1,0 +1,42 @@
+1. Major innovations: Neandertal draft genome and its reduced divergence to non-African modern humans.
+
+
+
+2. Illumina sequencing (with special considerations regarding library prep and contamination mitigation) and seq error-aware alignment
+
+
+
+3. Contamination mainly (95%-99%) from microbial DNA present on the bones; Neandertal DNA enrichment using restriction enzymes with recognition seqs at CpG sites; for this reason, GC-rich regions within the Neandertal genome would be largely missing, not allowing them to obtain a full genome - but also reducing the GC bias characteristic of ancient DNA sequencing.
+
+
+
+4. Using this specific draft genome alone, we now know a few other analyses we could apply. A few examples:
+	- Ne trajectory using PSMC
+	- outgroup for ILS-inference with coalescent; tools like TRAILS
+	- synteny block conservation between archaic and modern humans - identify regions of recent synteny breakdown
+	- LD mapping in archaic hominins and LD block conservation across humans
+
+5. Human, Neandertal, and chimpanzee alignments - excluding base transitions and only using transversions, estimated divergence between modern humans and last common ancestor, then divergence between Neandertal and modern humans, and calculated the latter's proportion out of the former to infer divergence time (**this heavily relies on the divergence time since the human-chimp ancestor!). The three Neandertal genomes show divergence regions mostly similar to modern humans, but distinctively closer to each other than to any human genome - while the five modern genomes also cluster together, with the two African ones being most divergent.
+
+
+
+6. Since Neandertal-modern human divergence was very recent, they argue that a significantly higher frequency of a derived allele in modern humans compared with Neandertals would constitute good evidence of a selective sweep. Furthermore, since high-freq derived alleles in modern humans correlate with a higher incidence of this derived allele being present in Neandertals too, they were able to calculate the expected number of Neandertal-derived alleles within regions of the modern human genome, and identify sweep signatures in the regions with a low observed to expected Neandertal-derived allele ratio.
+
+
+
+7. Recent modern human sweeps feature derived alleles at relatively low frequencies, whilst the method above relies on a prominently enriched set of derived alleles in modern humans. Any recent sweeps would produce a relatively low signal.
+
+
+
+8. Population-level divergence cannot simply be equated with DNA sequence divergence, as some sequences might show a more recent divergence time due to introgression/admixture. Instead, population divergence inference based on derived allele frequencies in the studied populations is more robust, as deeper divergence will lead to more novel mutation-driven derived alleles being present in one of the studied populations.
+For the second part - very briefly, they looked at derived alleles present in two human subpopulations (Africans and out-of-Africa desecendants) and whether the Neandertal assembly matched one of them more often than the other. They found that Neandertals are more genetically similar to non-African humans, hinting at gene flow between these two groups.
+
+
+9. They also looked at regions of higher diversity outside Africa, and whether they are present in Neandertals at a higher rate than their frequency in the out-of-Africa modern humans. While most are present in Neandertals at high enough frequencies to suggest Neandertal to out-of-Africa humans gene flow, some deep-origin haplotypes do not show up in the Neandertal genome at all. Potential alternative explanation would be that these are signs of introgression from a more archaic human population, or that there was a deep population division between the ancestors of modern Africans and non-Africans prior to the actual migration.
+
+
+
+10. The scenario presented by the authors assumes that non-African - Neandertal gene flow occurred in the Middle East before the out-of-Africa subpopulations diverged. Other potential explanations would be:
+		- most Neandertal and OOA-specific haplotypes have their origin in an even more ancient human lineage, and were subject to similar selective pressures in both descending groups
+		- a relatively genetically homogeneous Neandertal population was present across most of Eurasia, with similar amounts of gene flow between local communities across this vast area
+		- a Neandertal-related population with similar haplotype frequencies came in contact with the Oceanian and east Asian common ancestor population, with subsequent gene flow similar to the European event.
