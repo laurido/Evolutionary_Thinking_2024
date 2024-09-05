@@ -101,9 +101,9 @@ For the dataset you decided:
 6. Repeat 1-5 using Neighbourjoining, Parsimony and Maximum likelihood tree bulding algorithms (check the questions on the next point and don't automatically produce all the trees at once).
 7. Questions: 
     
-    1. About NJ: Is the NJ trees more similar than UPGMA? Are bootstrap values similar to the ones from UPGMA? Try rooting the tree and see how much it can change
-    2. About MP: How does the Parsimony tree differ from the distance based trees?
-    3. About ML: What does the maximum likelihood tree method do?
+    About NJ: How does NJ work?
+    About MP: How does MP work?
+    About ML: How does ML work?
 
 ### 3. Results
 
