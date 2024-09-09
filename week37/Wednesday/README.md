@@ -10,7 +10,7 @@ You should read this paper before Wednesday class:
 
 Nicole M. Foley et al., [A genomic timescale for placental mammal evolution](https://www.doi.org/10.1126/science.abl8189), Volume 380, Issue 6643, April 2023
 
-Then, you are going to comment it in groups and answer the questions that you can find in the [shared google docs](https://docs.google.com/document/d/1Ffz9XUNOqR12SdqFFJc46NTZG-37mV9csQOQ6Sbq4uA/edit). Each group is going to be in charge of some questions and they will have to write the answer that we all come up with.
+Then, you are going to comment it in groups and answer the questions that you can find in the [shared google docs](https://docs.google.com/document/d/1fAP0tWECt6E4ajqdrScKwK-pQ5ybDLz0Ff50yGOMCVs/edit?usp=share_link). Each group is going to be in charge of some questions and they will have to write the answer that we all come up with.
 
 
 ### Earlier example of large comparative genomics projects today with Whole Genome Sequencing(WGS) data.
