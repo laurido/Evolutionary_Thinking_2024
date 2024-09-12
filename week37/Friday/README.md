@@ -2,4 +2,6 @@
 
 ## Work plan
 
-Today we will start working on [hand-in 1](../handin_1).
+Lecture day today!
+
+Today we will start working on [hand-in 1](../../handin_1).
