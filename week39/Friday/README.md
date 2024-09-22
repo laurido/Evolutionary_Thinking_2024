@@ -6,7 +6,7 @@
 
 ### 1. Wright-Fisher model simulations and Coalescence simulations
 
-We are going to revise some of the concepts you have learned during the lectures from a more practical perspective: the Wright-Fisher model and the basics of coalescence theory. You should start with the [Wright Fisher exercise](WrightFisherTutorial.md) and then proceed to [coalescence exercise](CoalTutorial.md).
+We are going to revise some of the concepts you have learned during the lectures from a more practical perspective: the Wright-Fisher model and the basics of coalescence theory. Please start with the [Wright Fisher exercises](WrightFisherTutorial.ipynb) and then proceed to [coalescent exercises](CoalescentTutorial.ipynb).
 
 ### 2. Nielsen and Slatkin book exercises - Chapters 1-3
 
