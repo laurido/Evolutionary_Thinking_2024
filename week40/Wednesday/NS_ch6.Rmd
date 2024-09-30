@@ -1,0 +1,301 @@
+---
+title: "NS_ch6"
+adapted from: "Maria Izabel Cavassim Alves"
+curated by: "Calin Pantea"
+date: "10/6/2017 - 05/10/2023"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+## Chapter 6 Linkage Disequilibrium and Gene Mapping
+
+In the following exercises you will be exposed to some of the analysis
+of Chapters 4, 5, and 6 from the textbook (An introduction to Population
+Genetics - Nielsen and Slatkin). You will be asked to apply the R
+functions in 2 real datasets and in examples from the book. This
+document can be updated with comments and be compiled to a pdf version
+using the Knit command. Feel free to do it so! Good luck! :)
+
+This is an R Markdown document. Markdown is a simple formatting syntax
+for authoring HTML, PDF, and MS Word documents. For more details on
+using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that
+includes both content as well as the output of any embedded R code
+chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+#Exercise 6.1
+# Linkage desiquilibrium formulas:
+LD_pair <- function(n_AB, n_Ab, n_aB, n_ab){
+  n = sum(n_AB, n_Ab, n_aB, n_ab)
+  f_A = (n_Ab + n_AB)/n
+  f_B = (n_aB + n_AB)/n
+  f_a = (n_aB + n_ab)/n
+  f_b = (n_Ab + n_ab)/n
+  # D
+  D = n_AB/n - f_A*f_B
+  signal <<- D
+  # r^2
+  r_squared = D**2/(f_A * f_B * f_a * f_b)
+  
+  # D' rescales D to span the range [-1,1]
+  if(signal > 0){
+    D_prime = D/min(f_A * f_b, f_a * f_B)
+  }
+  if(signal < 0){
+    D_prime = D/max(f_A * f_B, f_a * f_b)
+  }
+  nam = c('D', 'r^2', 'D_prime')
+  D_stat = c(D, r_squared, D_prime)
+  
+  return(data.frame(nam, D_stat, stringsAsFactors = FALSE))
+}
+
+# Calculate D, D' and r^2 for sites 82 and 83 in the data shown in the figure above:
+LD_pair(n_AB = 22, n_Ab = 9, n_aB = 0, n_ab = 20)
+
+```
+
+```{r}
+#Exercise 6.2
+
+# Both haplotypes are missing either if one allele is 0 or if allele frequencies at the two loci are equal.
+
+```
+
+```{r}
+#Exercise 6.3
+# manually tedious; but nested for loops are our saving grace for this one:
+
+# first we define a dataframe for our allele counts at the two loci:
+
+allele_df <- data.frame(
+  A1 = c(12, 18),
+  A2 = c(28, 22),
+  A3 = c(0, 20),
+  row.names = c("B1","B2")
+)
+
+print(allele_df)
+
+# then define the D dataframe:
+
+D_df <- data.frame(matrix(NA, nrow = nrow(allele_df), ncol = ncol(allele_df)))
+rownames(D_df) <- rownames(allele_df)
+colnames(D_df) <- colnames(allele_df)
+
+# and nested loops to calculate all Ds:
+for (i in 1:ncol(allele_df)) {
+  for (j in 1:nrow(allele_df)) {
+    D_df[j, i] <- ((allele_df[j, i] / sum(allele_df[,])) - ((sum(allele_df[j, ]) / sum(allele_df[,])) * (sum(allele_df[, i]) / sum(allele_df[,]))))
+  }
+}
+
+print(D_df)
+
+# the main takeaway here is that, for multiallelic (more than 2 alleles) loci, some haplotypes can be in linkage equilibrium while others my not
+```
+
+```{r}
+#Exercise 6.4
+
+#a. ab ab ab ab Ab Ab Ab Ab aB aB aB aB aB AB AB AB
+
+# ab(4), aB(5), Ab (4), AB(3)
+
+f_A = 7/16
+  
+f_B = 8/16
+
+#b. 
+
+D = 3/16-((7/16)*(8/16))
+
+print(D)
+
+f_Af_B = f_A*f_B
+  
+f_af_b = (1-f_A)*(1-f_B)
+  
+# D<0 => D' = -D/min(f_Af_B, f_af_b)
+
+Dpr = (-D)/min(f_Af_B, f_af_b)
+
+print(Dpr)
+
+```
+
+```{r}
+#Exercise 6.5
+
+# a. In F1, f_AB = f_ab = fA = fB = 0.5, so:
+
+D_F1 <- 0.5-(0.5*0.5)
+print(D_F1)
+
+# b. c=1/2 so in F2 we will have f_AB = f_Ab = f_aB = f_ab = 0.25, so f_A = f_B = 0.5
+
+# but D(t) = (1-c)^t * D(0), so for F2, considering that the initial populations were in complete linkage equilibrium:
+
+D_F2 = 0.5 * 0
+print(D_F2)
+
+# c. Since F1 was not obtained by random mating and all F1 individuals are double heterozygotes, F1 is not under H-W.
+
+
+```
+
+```{r}
+#Exercise 6.6
+
+# a. We can again use nested for loops (or the chisq.test() function)
+
+AB <- 30
+Ab <- 270
+aB <- 370
+ab <- 330
+
+f_A <- 0.3
+f_a <- 0.7
+f_B <- 0.4
+f_b <- 0.6
+
+ssize <- sum(AB, Ab, aB, ab)
+
+chi2 <- 0
+
+for (i in c("a", "A")){
+  for (j in c("b","B")){
+    i_value <- get(paste("f_", i, sep=""))
+    j_value <- get(paste("f_", j, sep=""))
+    ij_value <- get(paste(i, j, sep=""))
+    
+    
+    chi2 <- chi2 + ((ij_value - i_value * j_value * ssize)^2) / (i_value * j_value * ssize)
+  }
+}
+
+print(chi2)
+
+# b. we calculate D_AB:
+
+D_AB <- (AB/ssize) - (f_A * f_B)
+print(D_AB)
+
+# c. (hint: have a look at Box 6.4)
+
+# chi2 <- (ssize*D^2)/(f_A*f_a*f_B*f_b)
+# we also know that chi2 <= 6.636, so:
+
+D_max <- sqrt(6.636 * f_A*f_a*f_B*f_b / ssize)
+print(D_max)
+
+# d. for c=0.001, D has to decrease from the initial value of -0.09 to ~ -0.0183
+# as instructed, we use (6.8) to obtain t:
+
+c_rec <- 0.001
+
+D_max/D_AB
+
+t_genNo <- log(abs(D_max/D_AB))/log(1-c_rec)
+print(t_genNo)
+
+
+```
+
+```{r}
+#Exercise 6.7
+
+# a. For pop1 we obtain:
+
+f_A1 <- 0.7
+f_B1 <- 0.8
+f_AB1 <- 0.7
+
+D_AB1 <- f_AB1 - f_A1 * f_B1
+print(D_AB1)
+
+# b. For pop mixture:
+
+f_AB <- 0.45
+f_ab <- f_AB
+f_Ab <- 0.05
+f_aB <- f_Ab
+f_A <- 0.5
+f_B <- 1-f_A
+
+D_AB <- f_AB - f_A * f_B
+print(D_AB)
+
+# larger D due to Wahlund effect!
+
+# c. Each pop is missing a haplotype; Dpr_1 = Dpr_2 = 1
+# in mixture, D_max = 0.25, with Dpr = D_AB/D_max = 0.8
+
+# D will be larger than the 2-pop average, but Dpr can be either larger or smaller
+
+```
+
+```{r}
+#Exercise 6.8
+
+c <- 0.001
+
+# a. t_genNo generation number that will represent the mean of an exponential distribution:
+
+t_genNo <- 1/c
+print(t_genNo)
+
+# b. Ne is used to follow coalescence, and the two lineages here are on the same chromosome; Ne will not matter
+
+# c. t_genNo for coalescent chromosomes is 2N:
+
+N_1 <- 10^2
+N_2 <- 10^6
+t_genNo_1 <- 2*N_1
+print(t_genNo_1)
+t_genNo_2 <- 2*N_2
+print(t_genNo_2)
+
+# d. as mentioned before, coalescence rate depends only on Ne
+
+# e. ratio of the average waiting times (page 119) gives:
+
+wratio_1 <- 2*N_1*c/(1+2*N_1*c)
+print(wratio_1)
+wratio_2 <- 2*N_2*c/(1+2*N_2*c)
+print(wratio_2)
+
+```
+
+Exercise 6.9
+
+One of the most straightforward analysis that one could do with the case
+control arranged data is to execute a Contingency Table test of
+independence. Both Chi-square and Fisher statistics could be used. But
+if the sample size is small, and the sizes do not follow the Chi-square
+assumptions, one would use the Fisher's exact test, because it gives the
+exact probability of any arrangement in the table.
+
+```{r}
+#Exercise 6.9
+
+# From box 6.8 page 123
+M <- as.matrix(rbind(c(650, 350), c(550, 450)))
+dimnames(M) <- list(c("A", "G"), c("Cases","Controls"))
+M
+
+# The test statistics can be done using the function chistq.test
+(Xsq <- chisq.test(M, correct = F))
+
+# Check if the results match and if you understand it.
+# Or manually
+Chi2Sum = sum(((Xsq$observed - Xsq$expected)^2)/Xsq$expected)
+Pvalue = 1- pchisq(q=Chi2Sum,df = 2-1)
+Pvalue
+
+
+```
