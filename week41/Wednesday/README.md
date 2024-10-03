@@ -1,6 +1,6 @@
 # Tuesday Week41
 
-[slides for today](week41/Wednesday/slides.pdf)
+[slides for today](slides.pdf)
 
 ## Work plan
 
