@@ -7,8 +7,7 @@
 
 ### Selection tests - R exercises
 
-Today we will look back at some of our previous topics and interpret selection using the exercises in our brand-new [R markdown](seltest.Rmd). The data you will need to run the exercises is available [here](../../week41/Friday/dnds_ex/).
-There is also going to be a fun Jeopardy quiz!
+Today we will look back at some of our previous topics and interpret selection using the exercises in [seltest.md](seltest.md). The data you will need to run the exercises are available [here](../../week41/Friday/dnds_ex/).
 
 We will also see what [Hand-in 2](../../handin_2) is all about - very quickly at the end of the lecture.
 
