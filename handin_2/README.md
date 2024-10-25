@@ -6,7 +6,7 @@ Option A. You will analyse the [NORK](https://www.uniprot.org/uniprot/Q8LKZ1) da
 
 Option B. You can formulate a hypothesis about selection (look below for examples), test your hypothesis and coment your results. 
 
-You must write a report spanning both Part 1 (either A or B) and Part 2. For Part 2 you must comment the result or show your work (the calculations to get the results). If the final result is the only thing provided, you will have failed Part 2. This report must be uploaded on Brightspace in **PDF** format before **Sunday the 29th October at 11:59 pm**. (A single report needs to be handed in per group).
+You must write a report spanning both Part 1 (either A or B) and Part 2. For Part 2 you must comment the result or show your work (the calculations to get the results). If the final result is the only thing provided, you will have failed Part 2. This report must be uploaded on Brightspace in **PDF** format before . (A single report needs to be handed in per group).
 
 ## Part 1
 
