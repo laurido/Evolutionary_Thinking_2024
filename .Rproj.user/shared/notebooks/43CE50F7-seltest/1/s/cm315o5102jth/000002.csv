@@ -1,0 +1,8 @@
+"0","```r
+#You can run a regression with the lm function, designating the relationship between the variables as \"y ~ 0 + x\". The 0 indicates that the regression line must go through the origin.
+regression <- lm(cov19.mutations2$Mutations ~ 0 + cov19.mutations2$DaysSinceRoot)
+
+#The slope of the regression (in number of mutations per day) can be found by calling regression$coefficients[1]. Multiplying that number by 365 gives us a substitution rate per year.
+mutations.per.year <- 365*regression$coefficients[1]
+mutations.per.year
+```"

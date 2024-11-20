@@ -1,0 +1,5 @@
+"0","```r
+#This line reads the metadata of samples included in the phylogenetic tree
+cov.tree.meta<- read.csv(\"coronaviruses_tree_meta.csv\")
+cov.tree.meta
+```"

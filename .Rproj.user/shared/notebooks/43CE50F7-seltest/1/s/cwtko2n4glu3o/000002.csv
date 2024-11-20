@@ -1,0 +1,14 @@
+"0","```r
+#Load the phylogenetic tree
+cov19.tree <- read.tree(\"nextstrain_ncov_open_global_6m_tree.nwk\")
+
+#Load the corresponding metadata
+cov19.tree.meta <- read.csv(\"nextstrain_ncov_open_global_6m_metadata.csv\")
+
+#Visualize the tree and color the tips by region
+#Note that I am using a fan layout here rather than the traditional layout, because it spreads out the tips more
+#Depending on your monitor size, you may want to adjust the size of the tip points using the size parameter (currently set to 1.5)
+p3 <- ggtree(cov19.tree, layout=\"fan\", open.angle=10)  + geom_treescale(offset=20)
+p3 %<+% cov19.tree.meta +
+  geom_tippoint(aes(color=region), na.rm = TRUE, size=1.5)
+```"

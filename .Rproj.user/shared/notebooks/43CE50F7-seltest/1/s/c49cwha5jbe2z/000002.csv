@@ -1,0 +1,38 @@
+"0","```r
+#Import data
+diversity <- read.csv(\"nextstrain_ncov_open_global_6m_diversity_aa.csv\")
+
+diversity2 <- diversity %>% 
+  group_by(gene) %>% 
+  complete(position = 1:max(position), fill = list(events = 0))
+
+#This is so
+diversity3 <- diversity2 %>% 
+  
+  # Compute chromosome size
+  group_by(gene) %>% 
+  summarise(chr_len=max(position)) %>% 
+  
+  # Calculate cumulative position of each chromosome
+  mutate(tot=cumsum(chr_len)-chr_len) %>%
+  select(-chr_len) %>%
+  
+  # Add this info to the initial dataset
+  left_join(diversity, ., by=c(\"gene\"=\"gene\")) %>%
+  
+  # Add a cumulative position of each SNP
+  arrange(gene, position) %>%
+  mutate( BPcum=position+tot)
+
+axisdf = diversity3 %>% group_by(gene) %>% summarize(center=( max(BPcum) + min(BPcum) ) / 2 )
+
+
+ggplot(diversity3, aes(x=BPcum, y=events)) + 
+  geom_point( aes(color=as.factor(gene))) + scale_color_manual(values = rep(c(\"red\", \"black\"), 7 )) + 
+  scale_x_continuous(label = axisdf$gene, breaks= axisdf$center) +
+  coord_flip()+
+  theme_classic() +
+  xlab(\"Gene\") +
+  ylab(\"Diversity\") +
+  theme(legend.position = \"none\")
+```"

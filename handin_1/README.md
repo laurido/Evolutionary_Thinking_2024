@@ -28,6 +28,7 @@ Short description of the [5 datasets](handin1_dataset.zip) which might be helpfu
 ### 1. Primates
 
 1.1. Reproduce the NJ and UPGMA trees from the Nei and Kumar book (Fig 1).
+Besides the screenshot of the parameters i ticked branch length and put precision to three
 
 <img src="Fig2.png" width="50%">
 
@@ -36,6 +37,7 @@ Short description of the [5 datasets](handin1_dataset.zip) which might be helpfu
 1.2. Why are the branch lengths longer when using Kimura substitution model compared to p distances model? 
 
 1.3. What does it mean to “bootstrap an internal node”? How do you interpret the boostrap values in the previous trees? Are they different among trees?
+The UPGMA differ on one of the nodes at least.
 
 1.4. Build a Maximum Parsimony tree. Does the topology agree with distance methods? Try to run it with a few (50 or 100) bootsraps
 

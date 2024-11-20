@@ -1,0 +1,15 @@
+"0","```r
+#Import data
+cov19.mutations <- read.csv(\"ncov_mutations.csv\")
+
+#Select first two years of data
+cov19.mutations2 <- cov19.mutations[which(cov19.mutations$DaysSinceRoot<730),]
+
+#Plot data
+ggplot(cov19.mutations2, aes(x=DaysSinceRoot, y=Mutations)) + 
+  geom_point() +
+  geom_smooth(method=\"lm\", se=FALSE, formula=y~x-1) + 
+  theme_classic() + 
+  xlab(\"Days\") + 
+  ylab(\"Mutations\")
+```"

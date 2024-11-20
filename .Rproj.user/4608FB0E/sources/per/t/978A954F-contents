@@ -41,7 +41,7 @@ library(phytools)
 library(tidyr)
 
 # set your working directory to the path leading to the data files:
-setwd("C:/Users/Laurids Svenningsen/Kode/Evolutionary_Thinking_2024/week41/Friday/dnds_ex")
+setwd("")
 
 getwd()
 ```
@@ -76,7 +76,7 @@ Phylogenetic trees come in a wide variety of formats that are not easily readabl
 
 ```{r}
 #This line simply reads in the phylogenetic tree (akin to the read.csv function for reading in tables)
-cov.tree <- read.tree("coronaviruses_tree.nwk")
+cov.tree <- read.tree("/dnds_ex/coronaviruses_tree.nwk")
 ```
 
 Once your tree is imported into R, you can visualize it using the `ggtree()` function from the `ggtree` package. `ggtree` is an extension of `ggplot2`, which you have already worked with. You only have to specify the data frame containing the phylogenetic tree (which we named `cov.tree` above). Like with `ggplot()`, you can add graphical elements using the plus sign. For example, the names of the different viral isolates are added to the tips of the phylogeny using `geom_tiplab()`.
@@ -124,7 +124,6 @@ p2 %<+% cov.tree.meta +
 What does the phylogeny tell you about the evolutionary origins of SARS-CoV-2? Discuss the findings in the context of your hypothesis.
 
 *Your answer goes here.*
-It came from bats. Pangolins were also infected along the way
 
 ------------------------------------------------------------------------
 
@@ -226,7 +225,6 @@ mutations.per.year
 As you evaluate the analyses in this section, what do you notice? What happened to all the viruses that were highly similar to the original samples and common in the first 100 days of the pandemic?
 
 *Your answer goes here*
-They diversify. The data spreads out on the Y-axis.
 
 ------------------------------------------------------------------------
 
@@ -250,7 +248,7 @@ ggplot(cov19.mutations, aes(x=DaysSinceRoot, y=Mutations, color=group)) +
 With your knowledge of the mutation rate, how do you interpret the results? Why are there apparent jumps in the number of mutations of isolates past day 730?
 
 *Your answer goes here*
-Mutations
+
 ------------------------------------------------------------------------
 
 # 4. Distribution of Mutations and Positive Selection

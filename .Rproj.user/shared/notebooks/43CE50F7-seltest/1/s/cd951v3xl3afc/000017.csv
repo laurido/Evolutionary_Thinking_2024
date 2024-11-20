@@ -1,0 +1,6 @@
+"0","#This line simply reads in the phylogenetic tree (akin to the read.csv function for reading in tables)
+cov.tree <- read.tree(""/dnds_ex/coronaviruses_tree.nwk"")
+"
+"2","Advarsel: kan ikke åbne fil '/dnds_ex/coronaviruses_tree.nwk': No such file or directory"
+"2","Fejl i file(file, ""r"") : kan ikke åbne forbindelsen
+"

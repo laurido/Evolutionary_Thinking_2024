@@ -1,0 +1,9 @@
+"0","```r
+#This line of code simply plots the same tree as above, but without the sample label
+p2 <- ggtree(cov.tree)
+
+#This codes adds the metadata to the tree
+p2 %<+% cov.tree.meta + 
+  geom_tiplab(aes(label=host), size=2) +
+  geom_tippoint(aes(color=virus.type), na.rm = TRUE)
+```"

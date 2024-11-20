@@ -1,0 +1,27 @@
+"0","```r
+#Import data:
+dn.ds <- read.csv(\"dnds_ex/ncov_dnds.csv\")
+
+# Filter data for a specific gene
+gene_data <- dn.ds[dn.ds$gene == \"orf7a\",]
+
+# And plot the ratio for the single gene you selected, with a line corresponding to neutrality (dN/dS = 1):
+ggplot(gene_data, aes(x=gene, y=w)) +
+    geom_bar(stat=\"identity\") +
+    theme_classic() +
+    geom_hline(yintercept=1) +
+    xlab(\"Gene\") +
+    ylab(\"dN/dS Ratio\")+
+    ylim(0,2)
+
+# You are also able to visualise all ratios at once:
+
+ggplot(dn.ds, aes(x=gene, y=w)) +
+    geom_bar(stat=\"identity\") +
+    theme_classic() +
+    geom_hline(yintercept=1) +
+    xlab(\"Gene\") +
+    ylab(\"dN/dS Ratio\")+
+    ylim(0,2)
+
+```"

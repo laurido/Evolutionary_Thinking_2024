@@ -22,10 +22,18 @@ Here we are going to test which substitution model is the best of our data.
 
 This will estimate likelihoods for each substitution model available and rank them according to the Bayesian information criterion (BIC). This value is similar to AIC. For now just accept that the smallest value is best.
 
-1. Which model is best for this data? Save the Table of model scores since when running some of the tree building methods, you may not be able to use the best model.
+1. Which model is best for this data? Save the Table of model scores since when running some of the tree building methods, you may not be able to use the best model. 
+HKY+G is best. 5341,970
 2. What does G and I mean?
+Non-uniformity of evolutionary rates among sites may be modeled by using a discrete Gamma distribution (+G) with 5 rate categories and by assuming that a certain fraction of sites are evolutionarily invariable (+I).
 3. What is R? and what is in the 4 columns following the R column?
+Assumed or estimated values of transition/transversion bias (R) are shown for each model, as well.
+They are followed by nucleotide frequencies (f) and rates of base substitutions (r) for each nucleotide pair.
 4. List the main differences between JC, Kimura, HKY, and Tamura/Nei models, based on Table 3.2 a,b,e below (Fig2). Relate what you find to question 3 above. 
+JC: All substitutions are equally likely and all nucleotide frequencies are equal.
+Kimura: Distinction between transition rates and transversion rates.
+HKY: Added the frequency of the different nucleotides
+Tamura-Nei model: Now there is a specific transition rate between pyrimidines and one between purines (alpha1)
 
 
 <img src="Fig2.png" width="75%">

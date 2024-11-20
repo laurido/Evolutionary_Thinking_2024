@@ -104,7 +104,6 @@ data.frame(fAB, faB,fAb,fab,fa,fb,D) %>%
 I know that for the same $fa$ and $fb$ values I can have different combinations of the haplotype frequencies. How large can D get for a given $fa$ and $fb$ values? For example, we take the case in which $f_a$ = 0.2 and $f_b$ = 0.4.
 
 ```{r}
-
 data.frame(fAB, faB,fAb,fab,fa,fb,D) %>%
   filter(fa == 0.2, fb == 0.4)
 ```
@@ -130,7 +129,7 @@ data.frame(fAB, faB,fAb,fab,fa,fb,D) %>%
   theme(aspect.ratio = 1)
 ```
 
-We can see that there are some constrains. For example, when $f_a = 0.1$ and $f_b = 0.1$ we see that most extreme value of $D_{ab}$ is 0.09, but when $f_a = 0.5$ and $f_b = 0.5$ then $D_{ab}$ can get either positive or negative 0.25. This tells us that **depending of the allele frequency,** $D$ **is going to be constrained**. We also see that the greatest value $D$ can get is 0.25 or -0.25 (instead of 1 that we though before).
+We can see that there are some constrains. For example, when $f_a = 0.1$ and $f_b = 0.1$ we see that most extreme value of $D_{ab}$ is 0.09, but when $f_a = 0.5$ and $f_b = 0.5$ then $D_{ab}$ can get either positive or negative 0.25. This tells us that **depending of the allele frequency,** $D$ **is going to be constrained**. We also see that the greatest value $D$ can get is 0.25 or -0.25 (instead of 1 that we thought before).
 
 So, if we say that we cheeked two alleles and they are in linkage with $D = 0.168$ are they in high or low LD?
 

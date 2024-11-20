@@ -1,0 +1,10 @@
+"0","```r
+##YOU DO NOT NEED TO RUN THIS! THIS TAKES A LONG TIME TO RUN. THIS CODE IS HERE FOR ILLUSTRATION ONLY, IN CASE YOU ARE INTERESTED HOW IT WORKS
+
+#library(adephylo)
+#dist <- distRoot(cov19.tree, method = \"patristic\")
+#ncov_mutations <- merge (cov19.tree.meta, dist, by.x = \"strain\", by.y = 0)
+#ncov_mutations$date2 <- as.Date(ncov_mutations$date, format = \"%Y-%m-%d\")
+#ref <- as.Date(\"2019-12-26\", format = \"%Y-%m-%d\")
+#ncov_mutations$time <- ncov_mutations$date2-ref
+```"

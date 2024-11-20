@@ -1,0 +1,5 @@
+"0","```r
+#You can plot phylogenetic trees with the ggtree function (it works just like ggplot). Note that \"size=2\" associated with geom_tiplab just modifies the font size
+p1 <- ggtree(cov.tree) + geom_tiplab(size=2)
+p1
+```"

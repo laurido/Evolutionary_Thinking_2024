@@ -1,0 +1,12 @@
+"0","```r
+#Here, I am just making a new variable for first two years or not
+cov19.mutations$group <- ifelse(cov19.mutations$DaysSinceRoot<730, \"Early\", \"Late\")
+
+#Plot data
+ggplot(cov19.mutations, aes(x=DaysSinceRoot, y=Mutations, color=group)) + 
+  geom_point(aes()) +
+  geom_smooth(data=subset(cov19.mutations,group==\"Early\"), method=\"lm\", se=FALSE, formula=y~x-1, color=\"black\") + 
+  theme_classic() + 
+  xlab(\"?\") + 
+  ylab(\"?\")
+```"
